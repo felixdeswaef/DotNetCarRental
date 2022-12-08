@@ -16,7 +16,14 @@ namespace DotNet.Controllers
             
             return View();
         }
+        public ActionResult Reserv()
+        {
+            return View();
+        }
 
-        
+        public ActionResult Regis()
+        {
+            return View();
+        }
     }
 }
