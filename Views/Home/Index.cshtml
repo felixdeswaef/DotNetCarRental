@@ -1,13 +1,21 @@
-﻿@RenderPage("BasePageHeader.cshtml")
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @RenderPage("BasePageInclude.cshtml")
+    <title>Reserveer</title>
+</head>
+<body>
+    @RenderPage("BasePageHeader.cshtml")
 
-         <%@ include file="/fragment.jspf" %>
-         <a href="<c:url value='/userPage.jsp' />"><h3> Registreer</h3></a>
-        <form method="post" action="<c:url value='app/res'/>">
-            <input name="klantid" type="number"   />
-            <input name="ORIGIN" type="text" value="LOGIN" hidden="True">
-            <input type="submit"/>
-            
-            
-        </form>
+    <a href="<c:url value='/userPage.jsp' />"><h3> Registreer</h3></a>
+    <form method="post" action="<c:url value='app/res'/>">
+        <input name="klantid" type="number" />
+        <input name="ORIGIN" type="text" value="LOGIN" hidden="True">
+        <input type="submit" />
 
-@RenderPage("BasePagefooter.cshtml")
+
+    </form>
+
+    @RenderPage("BasePagefooter.cshtml")
+</body>
+</html>

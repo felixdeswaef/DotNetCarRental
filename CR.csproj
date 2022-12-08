@@ -114,6 +114,7 @@
     <Content Include="Views\Home\BasePageFooter.cshtml" />
     <Content Include="Views\Home\Reserv.cshtml" />
     <Content Include="Views\Home\Regis.cshtml" />
+    <Content Include="Views\Home\BasePageInclude.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -123,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="webdata\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

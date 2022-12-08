@@ -1,4 +1,69 @@
-﻿@RenderPage("BasePageHeader.cshtml")
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    @RenderPage("BasePageInclude.cshtml")
+    <title>Reserveer</title>
+</head>
+<body>
+    @RenderPage("BasePageHeader.cshtml")
+    @using DotNet.Models
+        <ul>
+            @foreach (var x in data.Locs)
+            {<li>@x</li> }
+
+
+        </ul>
+        <h1 class="text-center">welcome user ${sessionScope.klantid}  </h1>
+        <div class="container">
+            <div class="fx-row">
+                <form method="post" action="home/ReservAdd">
+                    <div class="fx-col-5">
+                        <p class="w-20">
+                            start locatie:<select name="SLOC" size="1">
+
+                                <c:forEach begin="0" end="${applicationScope.LocationsLength-1}" var="ind">
+                                    <option value="${applicationScope.LocationIds[ind]}">${applicationScope.Locations[ind]}</option>
+                                </c:forEach>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="fx-col-5">
+                        <p class="w-20">
+                            eind locatie:<select name="ELOC" size="1">
+                                <c:forEach begin="0" end="${applicationScope.LocationsLength-1}" var="ind">
+                                    <option value="${applicationScope.LocationIds[ind]}">${applicationScope.Locations[ind]}</option>
+                                </c:forEach>
+                            </select>
+                        </p>
+                    </div>
+                    <div class="fx-col-5">
+                        <p class="w-20">
+                            voertuig:<select name="VEHI" size="1">
+                                <c:forEach begin="0" end="${applicationScope.VehiclesLength-1}" var="ind">
+                                    <option value="${applicationScope.VehicleIds[ind]}">${applicationScope.Vehicles[ind]}</option>
+                                </c:forEach>
+                            </select>
+                        </p>
+                    </div>
+
+                    <div class="fx-col-5"><p class="w-20">begin:<input name="STAR" type="date" /></p></div>
+                    <div class="fx-col-5">
+                        <p class="w-20">duur:<input name="DLEN" type="number" /></p>
+
+
+                        <input name="ORIGIN" type="text" value="RESERVADD" hidden="True">
+                        <input type="submit" />
+                    </div>
+            </div>
+
+            </form>
+
+
+
+
 
 
 @RenderPage("BasePagefooter.cshtml")
+</body>
+</html>
