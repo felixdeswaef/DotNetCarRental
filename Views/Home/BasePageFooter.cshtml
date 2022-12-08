@@ -1,2 +1,13 @@
 ﻿</body>
 </html>
+<%-- any content can be specified here e.g.: --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page pageEncoding="UTF-8" %>
+
+<c:if test="${initParam['showFooter'] == true}">
+    <div class="footer">
+        <span>footer (C) some idiot 2022|</span>
+        <span>${initParam['email']}|${initParam['tel']}</span>
+    </div>
+                
+</c:if>
