@@ -26,9 +26,14 @@ namespace DotNet.Models
         }
         public void Reserveer(int uid,int sloc,int eloc,int vehi, string date, int days)
         {
-            connection.connect()
+            connection.connect();
         }
+        public ArrayList reservaties(int UID)
+        {
+            ArrayList RET = new ArrayList();
 
+            return RET;
+        }
         public ArrayList Locs { get => locs; set => locs = value; }
         public ArrayList Wagens {get => wagens; set => wagens = value; }
     }
