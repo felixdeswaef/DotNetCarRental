@@ -10,9 +10,11 @@ namespace DotNet.Models
     {
         private ArrayList locs;
         private ArrayList wagens;
+        private Connect connection = new Connect();
 
         public data()
         {
+
             this.locs = new ArrayList();
             locs.Add(new locatie(1, "berlin"));
             locs.Add(new locatie(2, "brussels"));
@@ -24,7 +26,7 @@ namespace DotNet.Models
         }
         public void Reserveer(int uid,int sloc,int eloc,int vehi, string date, int days)
         {
-
+            connection.connect()
         }
 
         public ArrayList Locs { get => locs; set => locs = value; }
