@@ -8,7 +8,7 @@
     @RenderPage("BasePageHeader.cshtml")
 
     <a href="<c:url value='/userPage.jsp' />"><h3> Registreer</h3></a>
-    <form method="post" action="<c:url value='app/res'/>">
+    <form method="post" action="/Home/Index">
         <input name="klantid" type="number" />
         <input name="ORIGIN" type="text" value="LOGIN" hidden="True">
         <input type="submit" />

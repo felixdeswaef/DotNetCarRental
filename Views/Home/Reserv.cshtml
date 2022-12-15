@@ -7,43 +7,45 @@
 </head>
 <body>
     @RenderPage("BasePageHeader.cshtml")
-    @using DotNet.Models
-        <ul>
-            @foreach (var x in data.Locs)
-            {<li>@x</li> }
+    @using DotNet.Models;
 
-
-        </ul>
-        <h1 class="text-center">welcome user ${sessionScope.klantid}  </h1>
+        <h1 class="text-center">welcome user @Session["UID"]  </h1>
         <div class="container">
             <div class="fx-row">
-                <form method="post" action="home/ReservAdd">
+                <form method="post" action="/home/Reserv">
                     <div class="fx-col-5">
                         <p class="w-20">
                             start locatie:<select name="SLOC" size="1">
+    @foreach (locatie x in ((data)Session["data"]).Locs)
+    {
+        <option value="@x.LNR">@x.Lnaam</option>
+    }
 
-                                <c:forEach begin="0" end="${applicationScope.LocationsLength-1}" var="ind">
-                                    <option value="${applicationScope.LocationIds[ind]}">${applicationScope.Locations[ind]}</option>
-                                </c:forEach>
-                            </select>
+</select>
                         </p>
                     </div>
                     <div class="fx-col-5">
                         <p class="w-20">
                             eind locatie:<select name="ELOC" size="1">
-                                <c:forEach begin="0" end="${applicationScope.LocationsLength-1}" var="ind">
-                                    <option value="${applicationScope.LocationIds[ind]}">${applicationScope.Locations[ind]}</option>
-                                </c:forEach>
-                            </select>
+    @foreach (locatie x in ((data)Session["data"]).Locs)
+    {
+        <option value="@x.LNR">@x.Lnaam</option>
+    }
+</select>
                         </p>
                     </div>
                     <div class="fx-col-5">
                         <p class="w-20">
                             voertuig:<select name="VEHI" size="1">
-                                <c:forEach begin="0" end="${applicationScope.VehiclesLength-1}" var="ind">
-                                    <option value="${applicationScope.VehicleIds[ind]}">${applicationScope.Vehicles[ind]}</option>
-                                </c:forEach>
-                            </select>
+
+
+
+    @foreach (wagen x in ((data)Session["data"]).Wagens)
+    {
+        <option value="@x.WNR">@x.Name</option>
+    }
+
+</select>
                         </p>
                     </div>
 

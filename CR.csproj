@@ -115,6 +115,7 @@
     <Content Include="Views\Home\Reserv.cshtml" />
     <Content Include="Views\Home\Regis.cshtml" />
     <Content Include="Views\Home\BasePageInclude.cshtml" />
+    <Content Include="Views\Home\e404.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
