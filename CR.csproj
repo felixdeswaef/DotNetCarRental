@@ -101,6 +101,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Connect.cs" />
+    <Compile Include="Models\DAclients.cs" />
+    <Compile Include="Models\DAreserv.cs" />
     <Compile Include="Models\data.cs" />
     <Compile Include="Models\locatie.cs" />
     <Compile Include="Models\wagen.cs" />

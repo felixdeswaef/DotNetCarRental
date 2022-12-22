@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections;
+using Oracle.ManagedDataAccess.Client;
 
 namespace DotNet.Models
 {
@@ -10,7 +11,7 @@ namespace DotNet.Models
     {
         private ArrayList locs;
         private ArrayList wagens;
-        private Connect connection = new Connect();
+        private Connect connection =  Connect.instance;
 
         public data()
         {
@@ -24,10 +25,7 @@ namespace DotNet.Models
             wagens.Add(new wagen(2, "tiguan", 22.5));
             wagens.Add(new wagen(3, "sirocco", 21.5));
         }
-        public void Reserveer(int uid,int sloc,int eloc,int vehi, string date, int days)
-        {
-            connection.connect();
-        }
+    
         public ArrayList reservaties(int UID)
         {
             ArrayList RET = new ArrayList();

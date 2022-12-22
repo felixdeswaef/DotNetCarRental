@@ -1,5 +1,6 @@
 using System;
 using Oracle.ManagedDataAccess.Client;
+using System.Data.Sql;
 
 namespace DotNet
 {
@@ -7,24 +8,25 @@ namespace DotNet
 	{
 		private static Connect _instance;
 
-		public Connect ()
+		private Connect ()
 		{
 		}
-
+		
 		public OracleConnection connect()
 		{
 			String oradb = "Data Source=" +
 			               "(DESCRIPTION = " +
-			               "(ADDRESS = (PROTOCOL = TCP)(HOST = laurel.local.thomasmore.be)(PORT = 1521))" +
+			               "(ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))" +
 			               "(CONNECT_DATA =" +
 			               "(SERVER = DEDICATED)" +
-			               "(SID = erp)));" + 
+			               "(SID = XE)));" + 
 			               "User Id=e400;Password=e400;" ; 
 			Oracle.ManagedDataAccess.Client.OracleConnection conn = new Oracle.ManagedDataAccess.Client.OracleConnection(oradb);
 
 			conn.Open();
 			return conn;
 		}
+		//sql?
 
 		public static Connect instance
 		{

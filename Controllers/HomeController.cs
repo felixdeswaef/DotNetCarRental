@@ -26,11 +26,12 @@ namespace DotNet.Controllers
             {
                 Session["UID"] = Request.Form["klantid"];
             }
-            return Redirect("/Home/e404");
+            return Redirect("/Home/index");
 
         }
         public ActionResult Reserv()
         {
+            DAreserv DR = DAreserv.instance;
             data data = new data();
             if (Request.HttpMethod == "GET")
             {
@@ -40,7 +41,7 @@ namespace DotNet.Controllers
             }
             else if (Request.HttpMethod == "POST")
             {
-                data.Reserveer((int)Session["UID"], (int) Convert.ToInt32(Request.Form["SLOC"]), Convert.ToInt32(Request.Form["ELOC"]), Convert.ToInt32(Request.Form["VEHI"]), Request.Form["STAR"], Convert.ToInt32(Request.Form["DLEN"]));
+                DR.Reserveer((int)Session["UID"], (int) Convert.ToInt32(Request.Form["SLOC"]), Convert.ToInt32(Request.Form["ELOC"]), Convert.ToInt32(Request.Form["VEHI"]), Request.Form["STAR"], Convert.ToInt32(Request.Form["DLEN"]));
                 return Redirect("/Home/Overzicht");
             }
             return Redirect("/Home/e404");
